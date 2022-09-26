@@ -4,6 +4,12 @@ import java.util.Scanner;
 public class UserInterface {
     public static void main(String[] args) {
 
+        //introduction for the game
+        System.out.println("\n" +
+                "You have just arrived in an outlandish realm called the Mushroom Kingdom. It was ruled by Princess Toadstool and her faithful Mushroom people. \n" +
+                "But one day, evil cast a shadow over the land and the evil King Bowser Koopa emerged with his army of Goombas, Spinies, Flying Koopas, and other malignant creatures. \n" +
+                "King Koopa abducted Princess Toadstool and trapped her. So It's now up to you, to save the princess and defeat King Koopa and his minions\n");
+
 
         String north;
         String south;
