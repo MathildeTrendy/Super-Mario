@@ -1,6 +1,7 @@
 public class Adventure {
 
-public String currentRoom;
+public void Room
+
 
 
 

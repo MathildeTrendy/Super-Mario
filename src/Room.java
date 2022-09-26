@@ -1,14 +1,17 @@
 public class Room {
 
     private String currentRoom;
-    private String armour;
 
 
-
-    public void Room(){
-
+    public currentRoom(String currentRoom){
+        this.currentRoom = currentRoom;
     }
 
+public String getCurrentRoom(){
+    return currentRoom;
+}
 
-
+    public  void setCurrentRoom(String currentRoom) {
+        this.currentRoom = currentRoom;
+    }
 }

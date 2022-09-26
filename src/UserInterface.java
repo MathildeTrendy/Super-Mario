@@ -33,13 +33,14 @@ public class UserInterface {
                     break;
 
                 case "look around", "look":
-                    System.out.println("Welcome to"); //TODO Udskriv "Room1"
+                    System.out.println("Welcome to" + ); //TODO Udskriv "Room1"
                     break;
 
                 case "exit":
                     System.out.println("tak for alt");
                     isRunning = false;
                     break;
+
 
                 default:
                     System.out.println("Unknown command.");
@@ -48,5 +49,5 @@ public class UserInterface {
 
         } while (isRunning);
     }
+    }
 
-}
