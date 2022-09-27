@@ -39,7 +39,7 @@ public class UserInterface {
                     break;
 
                 case "look around", "look":
-                    System.out.println("Welcome to" ); //TODO Udskriv "Room1"
+                    System.out.println("Welcome to the" ); //TODO Udskriv "Room1"
                     System.out.println(adventure.getCurrentRoom().getNameOfRoom());
                     break;
 

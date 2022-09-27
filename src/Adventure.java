@@ -2,13 +2,13 @@ import java.util.Currency;
 
 public class Adventure {
 
-    //Curretroom, det rum man starter i
+
     private Room currentRoom = new Room ("Mushroom Kingdom", "You are now in the center of Mushroom World, a world that is orbited by a vast chain of small planetoids");
 
     public Room getCurrentRoom (){
         return currentRoom;}
 
-    // De forskellige rum med deres navn og beskrivelse, der mangler beskrivelse på dem alle
+    // Different Rooms with name and description
     public void createRooms() {
     Room room2 = new Room("Yoshi's Island", "need description...");
     Room room3 = new Room("Donut Plains", "need description...");
