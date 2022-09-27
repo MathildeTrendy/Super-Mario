@@ -1,20 +1,21 @@
 public class Room {
 
+    //I room finder man getter og setter
+
     private Room north;
     private Room south;
     private Room east;
     private Room west;
-    private String name;
-    private String des;
-
+    private String nameOfRoom;
+    private String descriptionOfRoom;
 
     public Room(String name, String des) {
         this.north = north;
         this.south = south;
         this.east = east;
         this.west = west;
-        this.name = name;
-        this.des = des;
+        this.nameOfRoom = name;
+        this.descriptionOfRoom = des;
     }
 
     public Room getNorth() {
@@ -33,12 +34,12 @@ public class Room {
         return west;
     }
 
-    public String getName(){
-        return name;
+    public String getNameOfRoom(){
+        return nameOfRoom;
     }
 
-    public String getDes(){
-        return des;
+    public String getDescriptionOfRoom(){
+        return descriptionOfRoom;
     }
 
     public void setNorth(Room north) {

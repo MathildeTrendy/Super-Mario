@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class UserInterface {
     public void start() {
 
-
-
         //introduction for the game
         System.out.println("\n" +
                 "You have just arrived in an outlandish realm called the Mushroom Kingdom. It was ruled by Princess Toadstool and her faithful Mushroom people. \n" +
@@ -19,8 +17,10 @@ public class UserInterface {
         String exit;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to Adventure time - choose a direction to go. \n Type in, if you want to go north, south, east or west.");
-    boolean isRunning = true;
+        System.out.println("Welcome to Adventure time - choose a direction to go. \n" +
+                "Type in, if you want to go north, south, east or west.");
+        boolean isRunning = true;
+
         do {
             String playerInput = sc.nextLine(); //Gemmer userInput, i stedet for bare at have en string fx "string playerinput;"
             playerInput = playerInput.toLowerCase();
@@ -40,9 +40,7 @@ public class UserInterface {
 
                 case "look around", "look":
                     System.out.println("Welcome to" ); //TODO Udskriv "Room1"
-                    System.out.println(adventure.getCurrentRoom().getName());
-
-
+                    System.out.println(adventure.getCurrentRoom().getNameOfRoom());
                     break;
 
                 case "exit":
