@@ -9,13 +9,13 @@ public class Room {
     private String nameOfRoom;
     private String descriptionOfRoom;
 
-    public Room(String name, String des) {
+    public Room(String name) {
         this.north = north;
         this.south = south;
         this.east = east;
         this.west = west;
         this.nameOfRoom = name;
-        this.descriptionOfRoom = des;
+        this.descriptionOfRoom = descriptionOfRoom;
     }
 
     public Room getNorth() {
