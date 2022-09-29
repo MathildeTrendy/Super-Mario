@@ -3,12 +3,13 @@
 =======
 public class Main {
     public static void main(String[] args) {
-        Adventure c = new Adventure();
-
-        UserInterface ui = new UserInterface();
-        ui.start();
 
         //controlller
+        Adventure c = new Adventure();
+
+        //Ui
+        UserInterface ui = new UserInterface();
+        ui.start();
 
     }
 }
