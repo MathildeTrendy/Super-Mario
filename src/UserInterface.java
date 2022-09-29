@@ -3,6 +3,11 @@ import java.util.Scanner;
 
     public class UserInterface {
     private Scanner keyb = new Scanner(System.in).useLocale(Locale.ENGLISH);
+    private Adventure game;
+    //skal sammenflettes ind i swicth case (game.go)
+        //while(game.isRuning()){ readinput(scanner);
+
+
 
     public void start() {
         //introduction to the game
@@ -13,8 +18,7 @@ import java.util.Scanner;
 
         Adventure adventure = new Adventure();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to Adventure time - choose a direction to go. \n" +
-                "Type in, if you want to go north, south, east or west.");
+        System.out.println("Welcome to Adventure time - choose a direction to go. \n" + "Type in, if you want to go north, south, east or west.");
 
         boolean isRunning = true;
 
