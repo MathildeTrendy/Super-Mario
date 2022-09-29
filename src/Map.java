@@ -9,10 +9,17 @@ public class Map {
 
     // Different Rooms with name and description, creating room objects
     public void createRooms() {
-        Room room1 = new Room("Mushroom Kingdom, You are now in the center of Mushroom World, a world that is orbited by a vast chain of small planetoids");
-        Room room2 = new Room("Yoshi's Island");
+        Room room1 = new Room("Mushroom Kingdom, In order to find King Koopa and save the princess you must go out in the world and explore the other 8 realms. You have a long journey ahead of you. " +
+                "You must intrepid deep and hazardous waters, jump from tree to tree, and visually examine your steps in the dark evil castles filled with fire balls and lava pits. " +
+                "Be wise and collect everything necessary on your way to obtain maximum power to subjugate the evil King Koopa and rescue the Princess. \n" +
+                " \n" + "You are now in a realm called the Mushroom Kingdom, a world orbited by a vast chain of small planetoids and the sweet Mushroom people.");
+
+        Room room2 = new Room("Yoshi's Island" + "You have just entered Yoshi's Island which is a large, tropical and mountainous island inhabited by the peace-loving Yoshis. " +
+                "You are standing on the beach, next to you are some huge palm trees, by the foot of the trees there are some fallen coconuts. " +
+                "Further ahead is there an old well.");
+
         Room room3 = new Room("Donut Plains");
-        Room room4 = new Room("Vanilla Dome");
+        Room room4 = new Room("Vanilla Dome castle");
         Room room5 = new Room("Twin Bridges");
         Room room6 = new Room("Forest of Illusion");
         Room room7 = new Room("King Bowser Koopa land");
