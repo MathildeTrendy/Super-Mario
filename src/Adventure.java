@@ -1,11 +1,13 @@
 public class Adventure {
 
 
-    private Map map = new Map();
+    private Map map;
     private Player player;
 
+
     public Adventure(){
-        map.createMap();
+        map = new Map();
+        map.createRooms();
         player = new Player();
         player.setCurrentRoom(map.getStarterRoom());
     }
@@ -14,8 +16,22 @@ public class Adventure {
         return player.getCurrentRoom();
     }
 
-    public boolean go(String direction){
-        return player.move(direction);
+    public boolean goNorth(){
+        return player.goNorth();
     }
-}
+    public boolean goEast() {
+        return player.goEast();
+    }
+        public boolean goWest(){
+            return player.goWest();
+        }
+        public boolean goSouth(){
+        return player.goSouth();
+    }
+    public Room getStarterRoom(){
+        return map.getStarterRoom();
+    }
+
+    }
+
 

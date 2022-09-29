@@ -1,13 +1,15 @@
-import java.util.Locale;
 import java.util.Scanner;
 
-    public class UserInterface {
-    private Scanner keyb = new Scanner(System.in).useLocale(Locale.ENGLISH);
+  public class UserInterface {
+   /*   private Scanner keyb = new Scanner(System.in).useLocale(Locale.ENGLISH);
     private Adventure game;
     //skal sammenflettes ind i swicth case (game.go)
         //while(game.isRuning()){ readinput(scanner);
-
-
+*/
+private Adventure adventure;
+      public UserInterface(Adventure c){
+          this.adventure = c;
+      }
 
     public void start() {
         //introduction to the game
@@ -16,7 +18,6 @@ import java.util.Scanner;
                 "But one day, evil cast a shadow over the land and the evil King Bowser Koopa emerged with his army of Goombas, Spinies, Flying Koopas, and other malignant creatures. \n" +
                 "King Koopa abducted Princess Toadstool and trapped her. So It's now up to you, to save the princess and defeat King Koopa and his minions\n");
 
-        Adventure adventure = new Adventure();
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Adventure time - choose a direction to go. \n" + "Type in, if you want to go north, south, east or west.");
 
@@ -28,21 +29,44 @@ import java.util.Scanner;
 
             switch (playerInput) {
                 case "go north", "north", "n":
-                    System.out.println("Going north");
-                    break;
+
+                    if (adventure.goNorth()){
+                        System.out.println("Going north" + adventure.getStarterRoom().getNameOfRoom() + "\n" + adventure.getStarterRoom().getDescriptionOfRoom());
+            }else{
+                        System.out.println("You cannot go that way.");
+                    }break;
+
                 case "go west", "west", "w":
                     System.out.println("Going west");
-                    break;
+                    if (adventure.goWest()){
+                        System.out.println("Going west" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                    }else{
+                        System.out.println("You cannot go that way.");
+                    }break;
+
+
                 case "go east", "east", "e":
                     System.out.println("Going east");
-                    break;
+                    if (adventure.goEast()){
+                        System.out.println("Going east" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                    }else{
+                        System.out.println("You cannot go that way.");
+                    }break;
+
                 case "go south", "south", "s":
                     System.out.println("Going south");
-                    break;
+                    if (adventure.goSouth()){
+                        System.out.println("Going south" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                    }else{
+                        System.out.println("You cannot go that way.");
+                    }break;
+
 
                 case "look around", "look":
                     System.out.println("Welcome to the" ); //TODO Udskriv hvilket rum du er i"
                     System.out.println(adventure.getCurrentRoom().getNameOfRoom());
+                    System.out.println(adventure.getCurrentRoom().getDescriptionOfRoom());
+                    System.out.println(adventure.getCurrentRoom().getItems());
                     break;
 
                 case "exit":

@@ -1,10 +1,5 @@
 public class Map {
 
-    //TODO A bit doubtful about the importance of this object - ask Peter about it...
-    private Room currentRoom = new Room ("Mushroom Kingdom");
-    public Room getCurrentRoom (){
-        return currentRoom;}
-
     private Room starterRoom;
 
     // Different Rooms with name and description, creating room objects
@@ -63,7 +58,4 @@ public class Map {
         return starterRoom;
     }
 
-
-    public void createMap() {
-    }
 }

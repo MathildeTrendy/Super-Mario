@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room {
 
     //I room finder man getter og setter
@@ -8,6 +10,27 @@ public class Room {
     private Room west;
     private String nameOfRoom;
     private String descriptionOfRoom;
+    private ArrayList<Item> items = new ArrayList<>();
+
+    //Items of room1
+    Item bananas = new Item("Bananas");
+    Item water = new Item("Water");
+    Item lighter = new Item("Lighter");
+
+    //Items of room2
+    Item smallKey = new Item("Small key");
+    Item bottle = new Item("Bottle");
+
+    //items of room3
+    Item torch = new Item("Torch");
+
+    public void addItem(String itemName){
+        Item itemList = new Item(itemName);
+        items.add(itemList);
+    }
+    public ArrayList<Item>getItems(){
+        return items;
+    }
 
     public Room(String name) {
         this.north = north;
