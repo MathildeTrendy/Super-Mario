@@ -1,29 +1,40 @@
+import java.util.Locale;
 import java.util.Scanner;
 
   public class UserInterface {
-   /*   private Scanner keyb = new Scanner(System.in).useLocale(Locale.ENGLISH);
-    private Adventure game;
-    //skal sammenflettes ind i swicth case (game.go)
-        //while(game.isRuning()){ readinput(scanner);
-*/
-private Adventure adventure;
-      public UserInterface(Adventure c){
-          this.adventure = c;
+
+  private Scanner keyb = new Scanner(System.in).useLocale(Locale.ENGLISH);
+  private Adventure adventure;
+  //private Adventure game;
+
+  public UserInterface(Adventure c){
+      this.adventure = c;}
+
+      //Method for handling all input from user //TODO find ud af om det kan udskiftes men nedstående
+    public void playerInput(String input){
+      while (!input.equals("exit")){
+          input = keyb.nextLine().toLowerCase();
+          String[] inputSplit = input.split(" ");
+          String direction = "";
+          String command = inputSplit[0];
+
+          if (inputSplit.length > 1){
+              direction = inputSplit[1];
+          }
       }
+    }
 
     public void start() {
         //introduction to the game
-        System.out.println("\n" +
-                "You have just arrived in an outlandish realm called the Mushroom Kingdom. It was ruled by Princess Toadstool and her faithful Mushroom people. \n" +
+        adventure = new Adventure();
+        System.out.println("\n" + "You have just arrived in an outlandish realm called the Mushroom Kingdom. It was ruled by Princess Toadstool and her faithful Mushroom people. \n" +
                 "But one day, evil cast a shadow over the land and the evil King Bowser Koopa emerged with his army of Goombas, Spinies, Flying Koopas, and other malignant creatures. \n" +
                 "King Koopa abducted Princess Toadstool and trapped her. So It's now up to you, to save the princess and defeat King Koopa and his minions\n");
-
-        Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Adventure time - choose a direction to go. \n" + "Type in, if you want to go north, south, east or west.");
 
         boolean isRunning = true;
-
         do {
+            Scanner sc = new Scanner(System.in);
             String playerInput = sc.nextLine(); //Gemmer userInput, i stedet for bare at have en string fx "string playerinput;"
             playerInput = playerInput.toLowerCase();
 
@@ -83,10 +94,10 @@ private Adventure adventure;
                     System.out.println("what do you wanna take?");
                     String itemname = sc.nextLine(); //Gemmer userInput, i stedet for bare at have en string fx "string playerinput;"
                     playerInput = playerInput.toLowerCase();
-                    Item itemPickedUp = adventure.getPlayer().removeItem(itemname);
-                    System.out.println("you have now taken " + itemPickedUp);
+                    //Item itemPickedUp = adventure.getPlayer().removeItem(itemname);
+                    //System.out.println("you have now taken " + itemPickedUp);
                     break;
-
+        /*
                 case "eat":
                 case "drink":
                     String foodname = secondWorld;
@@ -100,7 +111,7 @@ private Adventure adventure;
                         case OK:
                             System.out.println("You have eaten the " + foodname + " - your health is now: " + adventure.);
                     }
-
+*/
 
                 default:
                     System.out.println("Unknown command");

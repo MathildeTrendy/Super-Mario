@@ -1,10 +1,10 @@
 public class Adventure {
-
+// This class is the controler for the whole game, but does not control the player
 
     private Map map;
     private Player player;
 
-
+    // Adventure constructer, creating the map, player, and setting players currentRoom to starterRoom
     public Adventure(){
         map = new Map();
         map.createRooms();
@@ -16,16 +16,16 @@ public class Adventure {
         return player;
     }
 
-
-    public enum ReturnMessage{
-        NOT_FOUND,
-        CANT,
-        OK
-    }
-
+    // Getter for players current room
     public Room getCurrentRoom(){
         return player.getCurrentRoom();
     }
+
+    // Setter for players current room
+    public Room getStarterRoom(){
+        return map.getStarterRoom();
+    }
+
     public boolean goNorth(){
         return player.goNorth();
     }
@@ -38,10 +38,25 @@ public class Adventure {
     public boolean goSouth(){
         return player.goSouth();
     }
-    public Room getStarterRoom(){
-        return map.getStarterRoom();
+
+    // Calling move method from the class Player
+    public boolean go(String direction){
+        return player.move(direction);
     }
 
+    public Item takeItem(String itemName){
+        return player.takeItem(itemName);
+    }
+
+    public Item dropItem(String itemName){
+        return player.dropItem(itemName);
+    }
+
+    public enum ReturnMessage{
+        NOT_FOUND,
+        CANT,
+        OK
+    }
 
 
 
