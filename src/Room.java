@@ -12,16 +12,16 @@ public class Room {
     private String descriptionOfRoom;
     private ArrayList<Item> items = new ArrayList<>();
 
-    //Items of room1
+    //Items of room1 (skal i map)
     Item bananas = new Item("Bananas");
     Item water = new Item("Water");
     Item lighter = new Item("Lighter");
 
-    //Items of room2
+    //Items of room2(skal i map)
     Item smallKey = new Item("Small key");
     Item bottle = new Item("Bottle");
 
-    //items of room3
+    //items of room3 (skal i map)
     Item torch = new Item("Torch");
 
     public void addItem(String itemName){
@@ -84,7 +84,7 @@ public class Room {
 }
 
 
-
+//vi skal have en removeItem og den sal loope igennem dine nuværende items
 
 
 

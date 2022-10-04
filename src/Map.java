@@ -13,7 +13,7 @@ public class Map {
                 "You are standing on the beach, next to you are some huge palm trees, by the foot of the trees there are some fallen coconuts. " +
                 "Further ahead is there an old well.");
 
-        Room room3 = new Room("Donut Plains" );
+        Room room3 = new Room("Donut Plains");
         Room room4 = new Room("Vanilla Dome castle");
         Room room5 = new Room("Twin Bridges");
         Room room6 = new Room("Forest of Illusion");
@@ -41,6 +41,7 @@ public class Map {
 
         room7.setNorth(room4);
         room7.setEast(room8);
+
 
         room8.setNorth(room5);
         room8.setWest(room7);

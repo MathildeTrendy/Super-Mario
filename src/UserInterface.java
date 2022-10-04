@@ -76,7 +76,7 @@ private Adventure adventure;
                     break;
 
                 case "help", "clue", "i need help":
-                    System.out.println("Do you need help?"); //TODO inkludere help setting - gør evt af brugeren kan svare ja eller nej på af få hjælp og ja eller nejn til af få et ledetråd
+                    System.out.println("Do you need help?"); //TODO inkluderer help setting - gør evt af brugeren kan svare ja eller nej på af få hjælp og ja eller nejn til af få et ledetråd
                     break;
 
                 default:
@@ -89,4 +89,5 @@ private Adventure adventure;
 
     }
 
+//lav take, drop og en inventory
 
