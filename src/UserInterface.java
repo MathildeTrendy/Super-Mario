@@ -63,7 +63,7 @@ private Adventure adventure;
 
 
                 case "look around", "look":
-                    System.out.println("Welcome to the" ); //TODO Udskriv hvilket rum du er i"
+                    //TODO kig på getdescription, udskriver ikke"
                     System.out.println(adventure.getCurrentRoom().getNameOfRoom());
                     System.out.println(adventure.getCurrentRoom().getDescriptionOfRoom());
                     System.out.println(adventure.getCurrentRoom().getItems());
@@ -76,8 +76,31 @@ private Adventure adventure;
                     break;
 
                 case "help", "clue", "i need help":
-                    System.out.println("Do you need help?"); //TODO inkluderer help setting - gør evt af brugeren kan svare ja eller nej på af få hjælp og ja eller nejn til af få et ledetråd
+                    System.out.println("Do you need help?"); //TODO inkludere help setting - gør evt af brugeren kan svare ja eller nej på af få hjælp og ja eller nej til af få et ledetråd
                     break;
+
+                case "take":
+                    System.out.println("what do you wanna take?");
+                    String itemname = sc.nextLine(); //Gemmer userInput, i stedet for bare at have en string fx "string playerinput;"
+                    playerInput = playerInput.toLowerCase();
+                    Item itemPickedUp = adventure.getPlayer().removeItem(itemname);
+                    System.out.println("you have now taken " + itemPickedUp);
+                    break;
+
+                case "eat":
+                case "drink":
+                    String foodname = secondWorld;
+                    result = adventure.eat(foodname);
+                    switch (result) {
+                        case NOT_FOUND:
+                            System.out.println("there is no such thing as a " + foodname + " - et eat anywhere nearby");
+                            break;
+                        case CANT:
+                            System.out.println("You can´t eat " + foodname + " - it isn`t food!!");
+                        case OK:
+                            System.out.println("You have eaten the " + foodname + " - your health is now: " + adventure.);
+                    }
+
 
                 default:
                     System.out.println("Unknown command");
@@ -90,4 +113,5 @@ private Adventure adventure;
     }
 
 //lav take, drop og en inventory
+
 
