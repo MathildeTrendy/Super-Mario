@@ -60,13 +60,13 @@ public class Map {
         Item ammunition = new Item ("Ammunition", " ");
 
         // Food item
-        Food banana = new Food("Banana", " ", 20);
-        Food gummy_bear_flower = new Food("Gummy-bear-flower", " ", -85);
-        Food chocolate_liquid = new Food("Liquid hocolate"," ", -85);
-        Food bread = new Food("Bread"," ", 30);
-        Food apple = new Food("Apple"," ", 30);
-        Food tomato = new Food("Tomato"," ", 30);
-        Food water = new Food("Water"," ", 50);
+        Food banana = new Food("banana", " ", 20);
+        Food gummy_bear_flower = new Food("gummy_bear_flower", " ", -85);
+        Food chocolate_liquid = new Food("liquid_chocolate"," ", -85);
+        Food bread = new Food("bread"," ", 30);
+        Food apple = new Food("apple"," ", 30);
+        Food tomato = new Food("tomato"," ", 30);
+        Food water = new Food("water"," ", 50);
 
         //Setting directions for each room
         //Inherited from room (that's why we use addItem)

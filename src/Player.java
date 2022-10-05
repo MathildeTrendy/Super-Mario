@@ -21,45 +21,7 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
-    public boolean goNorth() {
-        if (currentRoom.getNorth() == null) {
-            return false;
 
-        } else {
-            currentRoom = currentRoom.getNorth();
-            return true;
-        }
-    }
-
-    public boolean goEast() {
-        if (currentRoom.getEast() == null) {
-            return false;
-
-        } else {
-            currentRoom = currentRoom.getEast();
-            return true;
-
-        }
-    }
-
-    public boolean goWest() {
-        if (currentRoom.getWest() == null) {
-            return false;
-        } else {
-            currentRoom = currentRoom.getWest();
-            return true;
-        }
-    }
-
-    public boolean goSouth() {
-        if (currentRoom.getWest() == null) {
-            return false;
-
-        } else {
-            currentRoom = currentRoom.getSouth();
-            return true;
-        }
-    }
 
     public boolean move(String direction) {
         Room requestedRoom = null;
@@ -104,9 +66,16 @@ public class Player {
 */ // remove item
 
     public Item takeItem (String itemName) {
-        Item pickedUpItem = getCurrentRoom().removeItem(itemName);
-        addItem(pickedUpItem);
-        return pickedUpItem;
+        Item requestedItem = null;
+        for (Item item : currentRoom.getItems()) {
+            if (item.getItemName().equals(itemName)) {
+                requestedItem = item;
+                playerInventory.add(item);
+                currentRoom.getItems().remove(item);
+                return requestedItem;
+            }
+        }
+    return requestedItem;
     }
 
     public Item dropItem(String itemName){
