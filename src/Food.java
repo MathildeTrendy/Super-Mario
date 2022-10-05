@@ -1,5 +1,5 @@
 public class Food extends Item {
-//the term `extends` - expresses the connection within the attributes of the class Room
+//the term `extends` - expresses the connection within the attributes of the class: Room
 
     private double healthPoints;
 

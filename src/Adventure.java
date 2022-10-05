@@ -1,6 +1,7 @@
 public class Adventure {
 // This class is the controler for the whole game, but does not control the player
 
+    //Field - term for multiple attributes
     private Map map;
     private Player player;
 

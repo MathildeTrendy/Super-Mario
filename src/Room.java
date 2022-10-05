@@ -1,7 +1,10 @@
 import java.security.PublicKey;
 import java.util.ArrayList;
 
-public class Room {
+//Field - term for multiple attributes
+    public class Room {
+
+    //Field - term for multiple attributes
     private Room north;
     private Room south;
     private Room east;

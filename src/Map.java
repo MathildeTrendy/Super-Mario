@@ -69,7 +69,7 @@ public class Map {
         Food water = new Food("Water"," ", 50);
 
         //Setting directions for each room
-        //Nedarvet fra room (derfor vi benytter addItem)
+        //Inherited from room (that's why we use addItem)
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room3);

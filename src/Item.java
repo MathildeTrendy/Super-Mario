@@ -1,5 +1,6 @@
 public class Item {
 
+    //Field - term for multiple attributes
     private String itemName;
     private String description;
 

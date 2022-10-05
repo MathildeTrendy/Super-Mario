@@ -10,7 +10,7 @@ import java.util.Scanner;
   public UserInterface(Adventure c){
       this.adventure = c;}
 
-      //Method for handling all input from user //TODO find ud af om det kan udskiftes men nedstående
+      //Method for handling all input from user //TODO find ud af om det kan udskiftes med nedstående
     public void playerInput(String input){
       while (!input.equals("exit")){
           input = keyb.nextLine().toLowerCase();
