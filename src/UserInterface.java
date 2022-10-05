@@ -42,32 +42,29 @@ import java.util.Scanner;
                 case "go north", "north", "n":
 
                     if (adventure.goNorth()){
-                        System.out.println("Going north" + adventure.getStarterRoom().getNameOfRoom() + "\n" + adventure.getStarterRoom().getDescriptionOfRoom());
+                        System.out.println("Going north - take a look around, by typing in 'look'");
             }else{
                         System.out.println("You cannot go that way.");
                     }break;
 
                 case "go west", "west", "w":
-                    System.out.println("Going west");
                     if (adventure.goWest()){
-                        System.out.println("Going west" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                        System.out.println("Going west - take a look around, by typing in 'look'");
                     }else{
                         System.out.println("You cannot go that way.");
                     }break;
 
 
                 case "go east", "east", "e":
-                    System.out.println("Going east");
                     if (adventure.goEast()){
-                        System.out.println("Going east" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                        System.out.println("Going east - take a look around, by typing in 'look'");
                     }else{
                         System.out.println("You cannot go that way.");
                     }break;
 
                 case "go south", "south", "s":
-                    System.out.println("Going south");
                     if (adventure.goSouth()){
-                        System.out.println("Going south" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                        System.out.println("Going south - take a look around, by typing in 'look'");
                     }else{
                         System.out.println("You cannot go that way.");
                     }break;
