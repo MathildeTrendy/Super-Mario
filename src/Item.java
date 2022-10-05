@@ -3,11 +3,7 @@ public class Item {
     private String itemName;
     private String description;
 
-    public Item(String itemName){
-        this.itemName = itemName;
-    }
-
-    public Item(String description, String itemName){
+    public Item(String description){
         this.description = description;
         this.itemName = itemName;
     }
@@ -27,6 +23,7 @@ public class Item {
         this.description = description;
     }
 
+    @Override
     public String toString(){
         return itemName + "\n" + description;
     }
