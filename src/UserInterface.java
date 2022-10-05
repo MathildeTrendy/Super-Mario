@@ -42,32 +42,29 @@ import java.util.Scanner;
                 case "go north", "north", "n":
 
                     if (adventure.goNorth()){
-                        System.out.println("Going north" + adventure.getStarterRoom().getNameOfRoom() + "\n" + adventure.getStarterRoom().getDescriptionOfRoom());
+                        System.out.println("Going north - take a look around, by typing in 'look'");
             }else{
                         System.out.println("You cannot go that way.");
                     }break;
 
                 case "go west", "west", "w":
-                    System.out.println("Going west");
                     if (adventure.goWest()){
-                        System.out.println("Going west" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                        System.out.println("Going west - take a look around, by typing in 'look'");
                     }else{
                         System.out.println("You cannot go that way.");
                     }break;
 
 
                 case "go east", "east", "e":
-                    System.out.println("Going east");
                     if (adventure.goEast()){
-                        System.out.println("Going east" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                        System.out.println("Going east - take a look around, by typing in 'look'");
                     }else{
                         System.out.println("You cannot go that way.");
                     }break;
 
                 case "go south", "south", "s":
-                    System.out.println("Going south");
                     if (adventure.goSouth()){
-                        System.out.println("Going south" + adventure.getCurrentRoom().getNameOfRoom() + "\n" + adventure.getCurrentRoom().getDescriptionOfRoom());
+                        System.out.println("Going south - take a look around, by typing in 'look'");
                     }else{
                         System.out.println("You cannot go that way.");
                     }break;
@@ -77,6 +74,7 @@ import java.util.Scanner;
                     //TODO kig på getdescription, udskriver ikke"
                     System.out.println(adventure.getCurrentRoom().getNameOfRoom());
                     System.out.println(adventure.getCurrentRoom().getDescriptionOfRoom());
+                    System.out.println("Grab an item, by typing 'take'");
                     break;
 
                 case "exit":
@@ -90,12 +88,33 @@ import java.util.Scanner;
                     break;
 
                 case "take":
-                    System.out.println("what do you wanna take?");
-                    String itemname = sc.nextLine(); //Gemmer userInput, i stedet for bare at have en string fx "string playerinput;"
-                    playerInput = playerInput.toLowerCase();
-                    //Item itemPickedUp = adventure.getPlayer().removeItem(itemname);
-                    //System.out.println("you have now taken " + itemPickedUp);
-                    break;
+                    System.out.println("Grab something, by t'");
+                    String direction = null;
+                    Item itemPickedUp = adventure.getPlayer().getCurrentRoom().removeItem(direction);
+                    if (itemPickedUp == null){
+                        System.out.println("no such item exists in this room");
+                    }else{
+                        System.out.println("You just picked up " + itemPickedUp.getItemName());
+                        adventure.getPlayer().addItem(itemPickedUp);
+                    }
+
+                case "drop":
+                    Item itemDropped = adventure.getPlayer().removeItem(direction);
+                    if (itemDropped == null){
+                        System.out.println("no such item...");
+                    }else {
+                        System.out.println("You have just dropped " + itemDropped);
+                        adventure.getPlayer().getCurrentRoom().addItem(itemDropped);
+                    }
+
+                case "inventory", "inv":
+                    if (adventure.getPlayer().getPlayerInventory().isEmpty()){
+                        System.out.println("You are currently holding nothing...");
+                    }else{
+                        System.out.println("You are now in the prosession of: " + adventure.getPlayer().getPlayerInventory());
+                    }
+                case "health", "hp":
+                    System.out.println("You currently have: " + adventure.getPlayer().getHealth() + "health points");
         /*
                 case "eat":
                 case "drink":
