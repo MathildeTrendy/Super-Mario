@@ -1,27 +1,28 @@
 import java.util.Locale;
 import java.util.Scanner;
 
-  public class UserInterface {
+public class UserInterface {
 
-  private Scanner keyb = new Scanner(System.in).useLocale(Locale.ENGLISH);
-  private Adventure adventure;
-  //private Adventure game;
+    private Scanner keyb = new Scanner(System.in).useLocale(Locale.ENGLISH);
+    private Adventure adventure;
+    //private Adventure game;
 
-  public UserInterface(Adventure c){
-      this.adventure = c;}
+    public UserInterface(Adventure c) {
+        this.adventure = c;
+    }
 
-      //Method for handling all input from user //TODO find ud af om det kan udskiftes med nedstående
-    public void playerInput(String input){
-      while (!input.equals("exit")){
-          input = keyb.nextLine().toLowerCase();
-          String[] inputSplit = input.split(" ");
-          String direction = "";
-          String command = inputSplit[0];
+    //Method for handling all input from user //TODO find ud af om det kan udskiftes med nedstående
+    public void playerInput(String input) {
+        while (!input.equals("exit")) {
+            input = keyb.nextLine().toLowerCase();
+            String[] inputSplit = input.split(" ");
+            String direction = "";
+            String command = inputSplit[0];
 
-          if (inputSplit.length > 1){
-              direction = inputSplit[1];
-          }
-      }
+            if (inputSplit.length > 1) {
+                direction = inputSplit[1];
+            }
+        }
     }
 
     public void start() {
@@ -37,37 +38,25 @@ import java.util.Scanner;
             Scanner sc = new Scanner(System.in);
             String playerInput = sc.nextLine(); //Gemmer userInput, i stedet for bare at have en string fx "string playerinput;"
             playerInput = playerInput.toLowerCase();
+            String[] playerInputs = playerInput.split(" ");
 
-            switch (playerInput) {
-                case "go north", "north", "n":
+            String command = playerInputs[0];
+            String playerChoice = "";
+            if (playerInputs.length > 1) {
+                playerChoice = playerInputs[1];
+            }
 
-                    if (adventure.goNorth()){
-                        System.out.println("Going north - take a look around, by typing in 'look'");
-            }else{
+
+            switch (command) {
+                case "go":
+                    boolean b = adventure.go(playerChoice);
+
+                    if (b) {
+                        System.out.println("Going " + playerChoice + " - take a look around, by typing in 'look'");
+                    } else {
                         System.out.println("You cannot go that way.");
-                    }break;
-
-                case "go west", "west", "w":
-                    if (adventure.goWest()){
-                        System.out.println("Going west - take a look around, by typing in 'look'");
-                    }else{
-                        System.out.println("You cannot go that way.");
-                    }break;
-
-
-                case "go east", "east", "e":
-                    if (adventure.goEast()){
-                        System.out.println("Going east - take a look around, by typing in 'look'");
-                    }else{
-                        System.out.println("You cannot go that way.");
-                    }break;
-
-                case "go south", "south", "s":
-                    if (adventure.goSouth()){
-                        System.out.println("Going south - take a look around, by typing in 'look'");
-                    }else{
-                        System.out.println("You cannot go that way.");
-                    }break;
+                    }
+                    break;
 
 
                 case "look around", "look":
@@ -88,38 +77,34 @@ import java.util.Scanner;
                     break;
 
                 case "take":
-                    System.out.println("Grab something, by t'");
-                    String direction = null;
-                    Item itemPickedUp = adventure.getPlayer().getCurrentRoom().removeItem(direction);
-                    if (itemPickedUp == null){
+                    System.out.println("Grab something, by typing 'take'");
+                    Item itemPickedUp = adventure.takeItem(playerChoice);
+                    if (itemPickedUp == null) {
                         System.out.println("no such item exists in this room");
-                    }else{
+                    } else {
                         System.out.println("You just picked up " + itemPickedUp.getItemName());
-                        adventure.getPlayer().addItem(itemPickedUp);
                     }
-
+                    break;
                 case "drop":
-                    Item itemDropped = adventure.getPlayer().removeItem(direction);
-                    if (itemDropped == null){
+                    Item itemDropped = adventure.getPlayer().removeItem(playerChoice);
+                    if (itemDropped == null) {
                         System.out.println("no such item...");
-                    }else {
+                    } else {
                         System.out.println("You have just dropped " + itemDropped);
                         adventure.getPlayer().getCurrentRoom().addItem(itemDropped);
                     }
-
+                    break;
                 case "inventory", "inv":
-                    if (adventure.getPlayer().getPlayerInventory().isEmpty()){
+                    if (adventure.getPlayer().getPlayerInventory().isEmpty()) {
                         System.out.println("You are currently holding nothing...");
-                    }else{
+                    } else {
                         System.out.println("You are now in the prosession of: " + adventure.getPlayer().getPlayerInventory());
                     }
+                    break;
                 case "health", "hp":
                     System.out.println("You currently have: " + adventure.getPlayer().getHealth() + "health points");
-
-                case "turn on", "light":
-
-
-                    /*
+                    break;
+        /*
                 case "eat":
                 case "drink":
                     String foodname = secondWorld;
@@ -141,9 +126,9 @@ import java.util.Scanner;
             }
 
         } while (isRunning);
-        }
-
     }
+
+}
 
 //lav take, drop og en inventory
 

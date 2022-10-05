@@ -27,19 +27,6 @@ public class Adventure {
         return map.getStarterRoom();
     }
 
-    public boolean goNorth(){
-        return player.goNorth();
-    }
-    public boolean goEast() {
-        return player.goEast();
-    }
-    public boolean goWest(){
-            return player.goWest();
-        }
-    public boolean goSouth(){
-        return player.goSouth();
-    }
-
     // Calling move method from the class Player
     public boolean go(String direction){
         return player.move(direction);
