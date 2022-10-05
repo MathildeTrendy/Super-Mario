@@ -77,7 +77,6 @@ import java.util.Scanner;
                     //TODO kig på getdescription, udskriver ikke"
                     System.out.println(adventure.getCurrentRoom().getNameOfRoom());
                     System.out.println(adventure.getCurrentRoom().getDescriptionOfRoom());
-                    System.out.println(adventure.getCurrentRoom().getItems());
                     break;
 
                 case "exit":
