@@ -77,16 +77,6 @@ public class Room {
          this.west=west;
     }
 
-    public void addItem(String itemName){
-        Item itemList = new Item(itemName);
-        roomItems.add(itemList);
-    }
-
-    public void addFood (foodName, healthPoints){
-        Food food = new Food(foodName,healthPoints);
-        addItem(food);
-    }
-
     // Method for get/take the item
     public Item getItem (String itemName){
         for (Item item : roomItems){
