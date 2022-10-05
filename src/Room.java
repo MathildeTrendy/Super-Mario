@@ -1,7 +1,6 @@
 import java.security.PublicKey;
 import java.util.ArrayList;
 
-//Field - term for multiple attributes
     public class Room {
 
     //Field - term for multiple attributes
