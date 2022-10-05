@@ -115,7 +115,11 @@ import java.util.Scanner;
                     }
                 case "health", "hp":
                     System.out.println("You currently have: " + adventure.getPlayer().getHealth() + "health points");
-        /*
+
+                case "turn on", "light":
+
+
+                    /*
                 case "eat":
                 case "drink":
                     String foodname = secondWorld;

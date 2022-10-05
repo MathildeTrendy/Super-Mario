@@ -6,6 +6,8 @@ public class Player {
 
     private Room currentRoom;
     private ArrayList<Item> playerInventory = new ArrayList<>();
+    boolean torchLight = false;
+    boolean torchInInventory;
     private double health;
     private final double maxHealth = 100;
 
@@ -90,19 +92,6 @@ public class Player {
         playerInventory.add(item);
     }
 
-    /*
-    public Item removeItem(String itemName){
-        for (Item item : playerInventory) {
-            if (item.getItemName().equals(itemName)){
-                playerInventory.remove(item);
-                return item;
-            }
-
-        }
-        return null;
-    }
-*/ // remove item
-
     public Item takeItem (String itemName) {
         Item pickedUpItem = getCurrentRoom().removeItem(itemName);
         addItem(pickedUpItem);
@@ -148,6 +137,14 @@ public class Player {
         return null;
     }
 
+    public boolean haveTorch(){
+        for (Item item : playerInventory) {
+            if (item.getItemName().contains("Torch")){
+        }else {
+               playerInventory = false;
+            }
+    }
+        return playerInventory;
 }
 
 
