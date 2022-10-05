@@ -3,7 +3,7 @@ public class Item {
     private String itemName;
     private String description;
 
-    public Item(String description){
+    public Item(String itemName, String description){
         this.description = description;
         this.itemName = itemName;
     }
