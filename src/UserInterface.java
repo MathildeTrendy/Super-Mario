@@ -80,7 +80,7 @@ public class UserInterface {
                     if (adventure.getPlayer().getPlayerInventory().isEmpty()) {
                         System.out.println("You are currently holding nothing...");
                     } else {
-                        System.out.println("You are now in the prosession of :\n " + adventure.getPlayer().getPlayerInventory());
+                        System.out.println("You are now in the posession of :\n " + adventure.getPlayer().getPlayerInventory());
                     }
                     break;
                 case "health", "hp":
@@ -112,6 +112,5 @@ public class UserInterface {
 
 }
 
-//lav take, drop og en inventory
 
 

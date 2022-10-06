@@ -13,8 +13,8 @@ public class Map {
                 "and visually examine your steps in the dark evil castles filled with fire balls and lava pits. " +
                 "Be wise and collect everything necessary on your way to obtain maximum power to subjugate the evil King Koopa and rescue the Princess.\n");
 
-        Room room2 = new Room("Yoshi's Island", "You have just entered Yoshi's Island which is a large, tropical and mountainous island inhabited by the peace-loving Yoshis. " +
-                "You are standing on the beach, next to you are some huge musa trees, by the foot of the trees there are some fallen bananas. " +
+        Room room2 = new Room("Yoshi's Island", "You have just entered Yoshi's Island which is a large, tropical and mountainous\nisland inhabited by the peace-loving Yoshis. " +
+                "You are standing on the beach, next\nto you are some huge musa trees, by the foot of the trees there are some fallen\nbananas. " +
                 "Further ahead is an old well, laying on bricks there is a lighter.\n");
 
         Room room3 = new Room("Donut Plains", "You have just entered the realm called Donut Plains. " +
