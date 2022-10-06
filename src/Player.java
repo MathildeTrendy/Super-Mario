@@ -108,9 +108,9 @@ public class Player {
     }
 
     public ReturnMessage eatFood(String itemName){
-        Item item = takeItem(itemName);
+        Item item = takeInventory(itemName);
         if (item instanceof Food){
-            health += ((Food) item).setHealthPoints();
+            health += ((Food) item).getHealthPoints();
             return ReturnMessage.OK; // eatable
         }else {
             if (item!=null){
@@ -119,6 +119,18 @@ public class Player {
             return ReturnMessage.NOT_FOUND; // No food found
         }
     }
+
+    public Item takeInventory(String itemName) {
+        for (Item item : playerInventory){
+            if (item.getItemName().equals(itemName)){
+                return item;
+            }
+
+        }
+    return null;
+    }
+
+
 
     /*
     // Method for having item

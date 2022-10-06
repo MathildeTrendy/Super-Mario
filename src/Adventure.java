@@ -33,6 +33,10 @@ public class Adventure {
         return player.move(direction);
     }
 
+    public Item takeInventory(String itemName){
+        return player.takeInventory(itemName);
+    }
+
     public Item takeItem(String itemName){
         return player.takeItem(itemName);
     }

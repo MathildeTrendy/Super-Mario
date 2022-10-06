@@ -44,7 +44,7 @@ public class UserInterface {
 
 
                 case "look around", "look":
-                    System.out.println(adventure.getCurrentRoom().getNameOfRoom());
+                    System.out.println("location: " + adventure.getCurrentRoom().getNameOfRoom());
                     System.out.println(adventure.getCurrentRoom().getDescriptionOfRoom());
                     System.out.println("Grab an item, by typing 'take' or for help type 'help' ");
                     break;
@@ -87,8 +87,7 @@ public class UserInterface {
                     System.out.println("You currently have: " + adventure.getPlayer().getHealth() + " health points");
                     break;
 
-                case "eat":
-                case "drink":
+                case "eat", "drink":
                     ReturnMessage result = adventure.playerEat(playerChoice);
                     switch (result) {
                         case NOT_FOUND:
@@ -97,8 +96,7 @@ public class UserInterface {
                         case CANT:
                             System.out.println("You can´t eat " + playerChoice + " - it isn`t food!!");
                         case OK:
-                            System.out.println("You have eaten the " + playerChoice +  "\n your health is now: " + adventure.getPlayer().getHealth() + adventure.getPlayer().removeItem(playerChoice));
-
+                            System.out.println("You have eaten the " + playerChoice + " - your health is now: " + " " + adventure.getPlayer().getHealth() + " " + adventure.getPlayer().removeItem(playerChoice));
                     }
 
                 default:
