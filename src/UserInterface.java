@@ -99,6 +99,9 @@ public class UserInterface {
                             System.out.println("You have eaten the " + playerChoice + " - your health is now: " + " " + adventure.getPlayer().getHealth() + " " + adventure.getPlayer().removeItem(playerChoice));
                     }
 
+                case "attack":
+                    break;
+
                 default:
                     System.out.println("Unknown command");
                     break;
