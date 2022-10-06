@@ -11,20 +11,6 @@ public class UserInterface {
         this.adventure = c;
     }
 
-    //Method for handling all input from user //TODO find ud af om det kan udskiftes med nedstående
-    public void playerInput(String input) {
-        while (!input.equals("exit")) {
-            input = keyb.nextLine().toLowerCase();
-            String[] inputSplit = input.split(" ");
-            String direction = "";
-            String command = inputSplit[0];
-
-            if (inputSplit.length > 1) {
-                direction = inputSplit[1];
-            }
-        }
-    }
-
     public void start() {
         //introduction to the game
         adventure = new Adventure();
@@ -34,23 +20,21 @@ public class UserInterface {
         System.out.println("Welcome to Adventure time - choose a direction to go. \n" + "Type in, if you want to go north, south, east or west.");
 
         boolean isRunning = true;
-        do {
-            Scanner sc = new Scanner(System.in);
-            String playerInput = sc.nextLine(); //Gemmer userInput, i stedet for bare at have en string fx "string playerinput;"
+        do {Scanner sc = new Scanner(System.in);
+
+            //Method for handling all input from user
+            String playerInput = sc.nextLine();
             playerInput = playerInput.toLowerCase();
             String[] playerInputs = playerInput.split(" ");
-
             String command = playerInputs[0];
             String playerChoice = "";
             if (playerInputs.length > 1) {
                 playerChoice = playerInputs[1];
             }
 
-
             switch (command) {
                 case "go":
                     boolean b = adventure.go(playerChoice);
-
                     if (b) {
                         System.out.println("Going " + playerChoice + " - take a look around, by typing in 'look'");
                     } else {
@@ -60,10 +44,9 @@ public class UserInterface {
 
 
                 case "look around", "look":
-                    //TODO kig på getdescription, udskriver ikke"
                     System.out.println(adventure.getCurrentRoom().getNameOfRoom());
                     System.out.println(adventure.getCurrentRoom().getDescriptionOfRoom());
-                    System.out.println("Grab an item, by typing 'take'");
+                    System.out.println("Grab an item, by typing 'take' or for help type 'help' ");
                     break;
 
                 case "exit":
@@ -72,12 +55,11 @@ public class UserInterface {
                     System.exit(1);
                     break;
 
-                case "help", "clue", "i need help":
+                case "help", "i need help":
                     System.out.println("Do you need help?"); //TODO inkludere help setting - gør evt af brugeren kan svare ja eller nej på af få hjælp og ja eller nej til af få et ledetråd
                     break;
 
                 case "take":
-                    System.out.println("Grab something, by typing 'take'");
                     Item itemPickedUp = adventure.takeItem(playerChoice);
                     if (itemPickedUp == null) {
                         System.out.println("no such item exists in this room");
@@ -98,27 +80,26 @@ public class UserInterface {
                     if (adventure.getPlayer().getPlayerInventory().isEmpty()) {
                         System.out.println("You are currently holding nothing...");
                     } else {
-                        System.out.println("You are now in the prosession of: " + adventure.getPlayer().getPlayerInventory());
+                        System.out.println("You are now in the prosession of :\n " + adventure.getPlayer().getPlayerInventory());
                     }
                     break;
                 case "health", "hp":
-                    System.out.println("You currently have: " + adventure.getPlayer().getHealth() + "health points");
+                    System.out.println("You currently have: " + adventure.getPlayer().getHealth() + " health points");
                     break;
-        /*
+
                 case "eat":
                 case "drink":
-                    String foodname = secondWorld;
-                    result = adventure.eat(foodname);
+                    ReturnMessage result = adventure.playerEat(playerChoice);
                     switch (result) {
                         case NOT_FOUND:
-                            System.out.println("there is no such thing as a " + foodname + " - et eat anywhere nearby");
+                            System.out.println("there is no such thing as a " + playerChoice + " - et eat anywhere nearby");
                             break;
                         case CANT:
-                            System.out.println("You can´t eat " + foodname + " - it isn`t food!!");
+                            System.out.println("You can´t eat " + playerChoice + " - it isn`t food!!");
                         case OK:
-                            System.out.println("You have eaten the " + foodname + " - your health is now: " + adventure.);
+                            System.out.println("You have eaten the " + playerChoice +  "\n your health is now: " + adventure.getPlayer().getHealth() + adventure.getPlayer().removeItem(playerChoice));
+
                     }
-*/
 
                 default:
                     System.out.println("Unknown command");

@@ -1,3 +1,4 @@
+import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
 
 public class Player {
@@ -106,15 +107,53 @@ public class Player {
         return null;
     }
 
-    public boolean haveTorch(){
-        for (Item item : playerInventory) {
-            if (item.getItemName().contains("Torch")){
+    public ReturnMessage eatFood(String itemName){
+        Item item = takeItem(itemName);
+        if (item instanceof Food){
+            health += ((Food) item).setHealthPoints();
+            return ReturnMessage.OK; // eatable
         }else {
-               playerInventory = false;
+            if (item!=null){
+                return  ReturnMessage.CANT; // not eatable/not a food
             }
+            return ReturnMessage.NOT_FOUND; // No food found
+        }
     }
-        return playerInventory;
+
+    /*
+    // Method for having item
+    public boolean haveTorch (){
+        for (Item item : playerInventory){
+            if (item.getItemName().contains("Torch")){
+                torchInInventory = true;
+            }else {
+                torchInInventory = false;
+            }
+        }
+        return torchInInventory;
+    }
+
+    // Method for turning on light
+    public boolean torchLightOn(){
+        boolean torchLightOn;
+        if (torchLight == true){
+            torchLightOn = true;
+        }else {
+            torchLightOn = false;
+        }
+        return torchLightOn;
+    }
+
+    public void toggleTorch (boolean toggleTorch) {
+        if (toggleTorch = true){
+            torchLight = true;
+        }else {
+            torchLight = false;
+        }
+    }
+*/ // en del af når vi skal tænde torch´en
 }
+
 
 
 

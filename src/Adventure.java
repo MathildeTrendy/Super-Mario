@@ -4,6 +4,7 @@ public class Adventure {
     //Field - term for multiple attributes
     private Map map;
     private Player player;
+    public enum tryEat {FOOD_NOT_FOUND, IS_NOT_FOOD, YOU_EAT}
 
     // Adventure constructer, creating the map, player, and setting players currentRoom to starterRoom
     public Adventure(){
@@ -40,14 +41,8 @@ public class Adventure {
         return player.dropItem(itemName);
     }
 
-    public enum ReturnMessage{
-        NOT_FOUND,
-        CANT,
-        OK
+    public ReturnMessage playerEat(String itemName){
+        return player.eatFood(itemName);
     }
-
-
-
-    }
-
+}
 
