@@ -17,7 +17,7 @@ public abstract class Weapons extends Item {
         this.range = range;
     }
 
-   // - skal vi lave getter til navn og description selvom det er gjort ovre i en anden klasse?
+   //Skal vi lave getter til navn og description selvom det er gjort ovre i en anden klasse?
 
     public int getDamage(){
         return damage;

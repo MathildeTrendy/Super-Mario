@@ -87,7 +87,7 @@ public class UserInterface {
                     System.out.println("You currently have: " + adventure.getPlayer().getHealth() + " health points");
                     break;
 
-                case "eat", "drink":
+                case "eat":
                     ReturnMessage result = adventure.playerEat(playerChoice);
                     switch (result) {
                         case NOT_FOUND:
@@ -97,6 +97,22 @@ public class UserInterface {
                             System.out.println("You can´t eat " + playerChoice + " - it isn`t food!!");
                         case OK:
                             System.out.println("You have eaten the " + playerChoice + " - your health is now: " + " " + adventure.getPlayer().getHealth() + " " + adventure.getPlayer().removeItem(playerChoice));
+                    }
+
+                    // TODO - vi skal på en eller anden måde gøre så det kun er vand og chokolade floden som kan drkkes
+
+                case "drink":
+                    ReturnMessage resultOfDrink = adventure.playerEat(playerChoice);
+                    switch (resultOfDrink){
+                        case NOT_FOUND:
+                            System.out.println("there is no " + playerChoice + " to drink anywhere nearby");
+                            break;
+                        case CANT:
+                            System.out.println("You can´t drink" + playerChoice);
+                            break;
+                        case OK:
+                            System.out.println("You have just drank " + playerChoice + " - your health is now:" + adventure.getPlayer().getHealth());
+                            break;
                     }
 
                 case "attack":
