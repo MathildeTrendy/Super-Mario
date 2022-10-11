@@ -91,12 +91,14 @@ public class UserInterface {
                     ReturnMessage result = adventure.playerEat(playerChoice);
                     switch (result) {
                         case NOT_FOUND:
-                            System.out.println("there is no such thing as a " + playerChoice + " - et eat anywhere nearby");
+                            System.out.println("there is no such thing as a " + playerChoice + " - to eat anywhere nearby");
                             break;
                         case CANT:
                             System.out.println("You can´t eat " + playerChoice + " - it isn`t food!!");
+                            break;
                         case OK:
-                            System.out.println("You have eaten the " + playerChoice + " - your health is now: " + " " + adventure.getPlayer().getHealth() + " " + adventure.getPlayer().removeItem(playerChoice));
+                            System.out.println("You just eate the " + playerChoice + " - your health is now: " + " " + adventure.getPlayer().getHealth());
+                            break;
                     }
 
                     // TODO - vi skal på en eller anden måde gøre så det kun er vand og chokolade floden som kan drkkes
