@@ -88,6 +88,7 @@ public class UserInterface {
                     break;
 
                 case "eat":
+                case "drink":
                     ReturnMessage result = adventure.playerEat(playerChoice);
                     switch (result) {
                         case NOT_FOUND:
@@ -102,7 +103,7 @@ public class UserInterface {
                     }
 
                     // TODO - vi skal på en eller anden måde gøre så det kun er vand og chokolade floden som kan drkkes
-
+/*
                 case "drink":
                     ReturnMessage resultOfDrink = adventure.playerEat(playerChoice);
                     switch (resultOfDrink){
@@ -116,7 +117,7 @@ public class UserInterface {
                             System.out.println("You have just drank " + playerChoice + " - your health is now:" + adventure.getPlayer().getHealth());
                             break;
                     }
-
+*/
                 case "attack":
                     break;
 
